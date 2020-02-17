@@ -41,6 +41,10 @@ function guess(id, guess) {
 };
 
 function populate() {
+	if (quiz.isEnded()) {
+	showScores();
+	}
+	else{
 	var element = document.getElementById("question");
 	element.innerHTML = quiz.getQuestion().text;
 
@@ -50,6 +54,7 @@ function populate() {
 		var element = document.getElementById("choice" + i);
 		element.innerHTML = choices[i];
 		guess("btn" + i, choices[i]);
+	}
 	}
 };
 
