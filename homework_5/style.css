@@ -85,6 +85,39 @@ li a:hover {
     text-decoration: none;
 }
 
+/* Content */
+.title {
+    font-family: "Walter Turncoat";
+    font-size: auto;
+    text-align: center;
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
+    grid-auto-rows: 500px;
+    justify-items: center;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    grid-auto-rows: 500px;
+    grid-auto-flow: column;
+    padding: 20px;
+}
+.container {
+    margin: auto;
+}
+.logo {
+    width: 200px;
+    padding: 20px;
+    width: 1fr;
+}
+.prodName {
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: "Walter Turncoat";
+}
 
 /* footer */
 footer {
