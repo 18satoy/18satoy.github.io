@@ -1,42 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bun Bun Bake Shop</title>
     <link rel="stylesheet" href="style.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Walter+Turncoat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- icons -->
+    <script src="https://kit.fontawesome.com/b976b3fbf4.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <!-- Top Logo -->
     <header>
         <a href="home.html">
-            <h1>Bun Bun Bake Shop</h1>
+            <h1>Bun Bun <br>Bake Shop</h1>
         </a>
     </header>
     <!-- Navigation Bar -->
     <nav>
-        <a href="home.html">Home</a>
-        <a href="products.html">Order Online</a>
-        <a>About Us</a>
-        <a>Contact Us</a>
-        <a>FAQ</a>
-        <a>
-            <img>
-        </a>
+        <ul>
+            <li><a class="active" href="home.html">Home</a></li>
+            <li><a href="products.html">Order Online</a></li>
+            <li><a>About Us</a></li>
+            <li><a>Contact Us</a></li>
+            <li><a>FAQ</a></li>
+            <li style="float:right">
+                <a><i class="fas fa-shopping-cart"></i></a>
+            </li>
+        </ul>
     </nav>
     <!-- Featured -->
-    <section>
-        <img>
-        <h2>This Month's Featured Cinnamon Roll</h2>
-        <h4>Original Cinnamon Roll</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nunc odio, tristique in volutpat in, fringilla eu nunc. Donec at enim tellus. In sagittis vel nunc non laoreet.</p>
-        <button href="original.html">Buy Now</button>
-    </section>
+    <div class="home">
+        <img src="icons/featured.jpg">
+        <div class="featured">
+            <h2>This Month's Featured<br> Cinnamon Roll</h2>
+            <h4>Original Cinnamon Roll</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In ornare quam viverra orci sagittis. Diam maecenas sed enim ut sem viverra aliquet eget. Mattis enim ut tellus elementum. Feugiat nisl pretium fusce id velit ut. Ipsum dolor sit amet consectetur. Diam donec adipiscing tristique risus nec.</p>
+            <button><a href="original.html">Buy Now</a></button>
+        </div>
+    </div>
     <!-- Footer -->
     <footer>
-        <h5>Follow us on social media!</h5>
-        <h5>Join our e-newsletter!</h5>
-        <input class="email" name="contact[email]" type="email" size=25 placeholder="vanillamilk@glaze.com">
-        <button>Subscribe!</button>
+        <div class="socialMedia">
+            <a>Follow us on social media!</a>
+            <div class="iconbar">
+                <a><i class="fab fa-facebook-square"></i></a>
+                <a><i class="fab fa-instagram"></i></a>
+                <a><i class="fab fa-twitter-square"></i></a>
+            </div>
+        </div>
+        <div class="vertLine"></div>               
+        <div class="newsletter">
+            <a>Join our e-newsletter!</a>
+            <input class="email" name="contact[email]" type="email" size=25 placeholder="vanillamilk@glaze.com">
+            <button>Subscribe!</button>
+        </div>
     </footer>
 </body>
     
