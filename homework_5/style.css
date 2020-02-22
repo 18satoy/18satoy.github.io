@@ -70,18 +70,19 @@ li a:hover {
     padding-right: 10px;
     text-align: left;
 }
-.featured button {
-    background-color: #fce5cdff;
-    border: 1px solid #595959;
-    font-family: "Walter Turncoat", cursive;
-    font-size: 23px;
-    border-radius: 20px;
-    height: 55px;
-    width: 150px;
-}
 .featured a {
     color: black;
+    background-color: #fce5cdff;
+    font-size: 23px;
     text-decoration: none;
+    border: 1px solid #fe9801;
+    border-radius: 20px;
+    padding: 2% 5%;
+    transition: 0.2s;
+}
+.featured a:hover, .featured a:focus {
+    color: white;
+    background-color: #fe9801;
 }
 
 /* Content */
