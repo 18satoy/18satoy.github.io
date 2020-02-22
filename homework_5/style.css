@@ -61,8 +61,7 @@ li a:hover {
 }
 
 .featured h2 {
-    font-size: 40px;
-    
+    font-size: 40px;  
 }
 .featured p {
     font-family: Montserrat, sans-serif;
@@ -80,6 +79,7 @@ li a:hover {
     padding: 2% 5%;
     transition: 0.2s;
 }
+
 .featured a:hover, .featured a:focus {
     color: white;
     background-color: #fe9801;
@@ -147,7 +147,7 @@ main {
     font-family: Montserrat;
     padding-right: 5%
 }
-/* Personalize Product*/
+/* Personalize Product by Quantity and Glaze*/
 .quantity h4, .glaze h4 {
     margin-top: 0;
     margin-bottom: 1%;
@@ -197,7 +197,7 @@ main {
     color: white;
 }
 
-/* footer */
+/* Footer */
 footer {
     font-family: "Walter Turncoat";
     font-size: 18px;
@@ -216,6 +216,8 @@ footer {
     height: 40px;
     padding-right: 20px;
 }
+
+/* Newsletter */
 .newsletter {
     display: inline-block;
     padding-top: 30px;
@@ -245,6 +247,7 @@ footer {
     height: 22px;
 }
 
+/* Social Media Icons*/
 .iconbar {
     vertical-align: text-top;
     text-align: center;
