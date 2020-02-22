@@ -53,7 +53,7 @@ li a:hover {
 }
 .featured {
     background-color: #ffe599ff;
-    left: 750px;
+    left: 70%;
     width: 30%;
     float:right;
     font-family: "Walter Turncoat", cursive;
@@ -105,6 +105,8 @@ main {
     grid-auto-flow: column;
     padding: 20px;
 }
+
+/* Product Listings */
 .container {
     margin: auto;
 }
@@ -117,6 +119,83 @@ main {
     padding-bottom: 20px;
     text-align: center;
     font-family: "Walter Turncoat";
+}
+
+/* Product Details*/
+.back {
+    width: 4%;
+    padding: 2em 0 1em 3em;
+}
+.prodSplit {
+    display: flex;
+}
+.prodPic {
+    width: 50%;
+    padding: 0 3% 10%;
+}
+.prodPic img {
+    width: 100%;
+}
+.prodDescription {
+    width: 50%;
+    font-family: "Walter Turncoat", cursive;
+}
+.prodDescription h1 {
+    font-size: 250%;
+    vertical-align: text-top;
+    margin-top: 0;
+}
+.prodDescription p {
+    font-family: Montserrat;
+    padding-right: 5%
+}
+/* Personalize Product*/
+.quantity h4, .glaze h4 {
+    margin-top: 0;
+    margin-bottom: 1%;
+}
+.quantity button {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px 30px;
+    font-size: 14px;
+    font-family: "Walter Turncoat", cursive;
+    margin: 0 5% 2% 3%;
+}
+.quantity button:hover, .quantity button:focus {
+    outline: none;
+    background-color: #fce5cdff;
+}
+
+.flavor button {
+    width: 40%;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 13px 20px;
+    font-size: 14px;
+    font-family: "Walter Turncoat", cursive;
+    margin: 0 5% 2% 2%;
+}
+.flavor button:hover, .flavor button:focus {
+    outline: none;
+    background-color: #fce5cdff;
+}
+
+/* Add to Cart*/
+.addToCart {
+    font-family: "Walter Turncoat", cursive;
+    font-size: 130%;
+    padding: 1% 8%;
+    align-content: center;
+    border-radius: 15px;
+    display: block;
+    margin: 3% 27%;
+    border: 2px solid #fe00008d;
+    transition-duration: 0.2s;
+}
+.addToCart:hover {
+    background-color: #fe00008d;
+    color: white;
 }
 
 /* footer */
