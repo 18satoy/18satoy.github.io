@@ -58,7 +58,6 @@ li a:hover {
     float:right;
     font-family: "Walter Turncoat", cursive;
     text-align: center;
-    font-size: auto;
 }
 
 .featured h2 {
@@ -88,7 +87,6 @@ li a:hover {
 /* Content */
 .title {
     font-family: "Walter Turncoat";
-    font-size: auto;
     text-align: center;
 }
 main {
@@ -113,7 +111,6 @@ main {
 .logo {
     width: 200px;
     padding: 20px;
-    width: 1fr;
 }
 .prodName {
     padding-bottom: 20px;
