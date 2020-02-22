@@ -190,6 +190,7 @@ main {
     margin: 3% 27%;
     border: 2px solid #fe00008d;
     transition-duration: 0.2s;
+    outline: none;
 }
 .addToCart:hover {
     background-color: #fe00008d;
@@ -230,6 +231,12 @@ footer {
     border: 1px solid #ff9900;
     border-radius: 10px;
     margin-left: 20px;
+    transition-duration: 0.2s;
+}
+
+.newsletter button:hover {
+    background-color: #ff9900;
+    color: white;
 }
 .newsletter input {
     font-family: "Walter Turncoat";
