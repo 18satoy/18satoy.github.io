@@ -1,28 +1,28 @@
 /*** Object Constructors ***/
-function Cat(name, age) {
+function Penguin(name, age) {
   this.name = name;
   this.age = age;
-  this.image = "cat.jpg";
-  this.type = "Cat";
+  this.image = "penguin.jpg";
+  this.type = "Penguin";
 }
 
-function Dog(name, age) {
+function Fox(name, age) {
   this.name = name;
   this.age = age;
-  this.image = "dog.jpg"
-  this.type = "Dog";
+  this.image = "fox.jpg"
+  this.type = "Fox";
 }
 
-function Bird(name, age) {
+function Shoebill(name, age) {
   this.name = name;
   this.age = age;
-  this.image = "bird.jpg"
-  this.type = "Bird";
+  this.image = "shoebill.jpg"
+  this.type = "Shoebill";
 }
 
 /*** Global Variables ***/
-var animals = [new Cat(), new Dog(), new Bird()];
-var names = ["Toothless", "Marshmallow", "Momo", "Coco", "Ollie", "Oscar", "Bella", "Ruby", "Apples"];
+var animals = [new Penguin(), new Fox(), new Shoebill()];
+var names = ["Toothless", "Stone", "Momo", "Coco", "Ollie", "Oscar", "Bella", "Ruby", "Apples"];
 
 /*** Functions ***/
 // get a random index for an array from 0 to maxIndex (not inclusive)
@@ -35,17 +35,17 @@ function generateRandomAnimal() {
   var randomIdx = getRandomIndex(animals.length);
   var randomAnimal = animals[randomIdx];
 
-  if (randomAnimal instanceof Cat) 
+  if (randomAnimal instanceof Penguin) 
   {
-    return new Cat(generateRandomName(), generateRandomAge());
+    return new Penguin(generateRandomName(), generateRandomAge());
   } 
-  else if (randomAnimal instanceof Dog) 
+  else if (randomAnimal instanceof Fox) 
   {
-    return new Dog(generateRandomName(), generateRandomAge());
+    return new Fox(generateRandomName(), generateRandomAge());
   } 
-  else if (randomAnimal instanceof Bird) 
+  else if (randomAnimal instanceof Shoebill) 
   {
-    return new Bird(generateRandomName(), generateRandomAge());
+    return new Shoebill(generateRandomName(), generateRandomAge());
   }
 }
 
