@@ -1,0 +1,290 @@
+body {
+    margin: 0 0 0 0;
+}
+header {
+    text-align: center;
+}
+header a {
+    text-decoration: none;
+    font-family: "Walter Turncoat", cursive;
+    color: darkorange;
+}
+
+/* navigation bar */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: #f6b26bff;
+}
+li {
+    float: left;
+}
+li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: "Walter Turncoat";
+    vertical-align: middle;
+}
+li a:hover {
+    background-color: #fe9801;
+}
+
+.active {
+    background-color: darkorange;
+}
+
+/* homepage */
+.home {
+    display: flex;
+}
+.home img {
+    float:left;
+    width: 70%;
+    max-width: 100%;
+}
+.featured {
+    background-color: #ffe599ff;
+    left: 70%;
+    width: 30%;
+    float:right;
+    font-family: "Walter Turncoat", cursive;
+    text-align: center;
+}
+
+.featured h2 {
+    font-size: 40px;  
+}
+.featured p {
+    font-family: Montserrat, sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+}
+.featured a {
+    color: black;
+    background-color: #fce5cdff;
+    font-size: 23px;
+    text-decoration: none;
+    border: 1px solid #fe9801;
+    border-radius: 20px;
+    padding: 2% 5%;
+    transition: 0.2s;
+}
+
+.featured a:hover, .featured a:focus {
+    color: white;
+    background-color: #fe9801;
+}
+
+/* Content */
+.title {
+    font-family: "Walter Turncoat";
+    text-align: center;
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
+    grid-auto-rows: 500px;
+    justify-items: center;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    grid-auto-rows: 500px;
+    grid-auto-flow: column;
+    padding: 20px;
+}
+
+/* Product Listings */
+.container {
+    margin: auto;
+}
+.logo {
+    width: 200px;
+    padding: 20px;
+}
+.prodName {
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: "Walter Turncoat";
+}
+
+/* Product Details*/
+.back {
+    width: 4%;
+    padding: 2em 0 1em 3em;
+}
+.prodSplit {
+    display: flex;
+}
+.prodPic {
+    width: 50%;
+    padding: 0 3% 10%;
+}
+.prodPic img {
+    width: 100%;
+}
+.prodDescription {
+    width: 50%;
+    font-family: "Walter Turncoat", cursive;
+}
+.prodDescription h1 {
+    font-size: 250%;
+    vertical-align: text-top;
+    margin-top: 0;
+}
+.prodDescription p {
+    font-family: Montserrat;
+    padding-right: 5%
+}
+/* Personalize Product by Quantity and Glaze*/
+.quantity h4, .glaze h4 {
+    margin-top: 0;
+    margin-bottom: 1%;
+}
+.quantity button {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px 30px;
+    font-size: 14px;
+    font-family: "Walter Turncoat", cursive;
+    margin: 0 5% 2% 3%;
+}
+.quantity button:hover, .quantity button:focus {
+    outline: none;
+    background-color: #fce5cdff;
+}
+
+.flavor button {
+    width: 40%;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 13px 20px;
+    font-size: 14px;
+    font-family: "Walter Turncoat", cursive;
+    margin: 0 5% 2% 2%;
+}
+.flavor button:hover, .flavor button:focus {
+    outline: none;
+    background-color: #fce5cdff;
+}
+
+/* Add to Cart*/
+.addToCart {
+    font-family: "Walter Turncoat", cursive;
+    font-size: 130%;
+    padding: 1% 8%;
+    align-content: center;
+    border-radius: 15px;
+    display: block;
+    margin: 3% 27%;
+    border: 2px solid #fe00008d;
+    transition-duration: 0.2s;
+    outline: none;
+}
+.addToCart:hover {
+    background-color: #fe00008d;
+    color: white;
+}
+
+/* Shopping Cart */
+.empty {
+    font-family: "Walter Turncoat", cursive;
+    color: #b7b7b7;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10%;
+}
+.empty button {
+    font-family: "Walter Turncoat", cursive;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: 1px solid #595959;
+    background-color: #fce5cdff;
+    transition-duration: 0.2s;
+}
+
+.empty button:hover {
+    background-color: #f6b26bff;
+}
+
+/* Footer */
+footer {
+    font-family: "Walter Turncoat";
+    font-size: 18px;
+    background-color: #f6b26bff;
+}
+.socialMedia {
+    display: inline-block;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.vertLine {
+    display: inline-block;
+    border-left: 2px solid black;
+    height: 40px;
+    padding-right: 20px;
+}
+
+/* Newsletter */
+.newsletter {
+    display: inline-block;
+    padding-top: 30px;
+    vertical-align: top;
+}
+.newsletter a {
+    padding-right: 20px;
+}
+.newsletter button {
+    font-family: "Walter Turncoat";
+    font-size: 18px;
+    background-color: #fce5cdff;
+    border: 1px solid #ff9900;
+    border-radius: 10px;
+    margin-left: 20px;
+    transition-duration: 0.2s;
+}
+
+.newsletter button:hover {
+    background-color: #ff9900;
+    color: white;
+}
+.newsletter input {
+    font-family: "Walter Turncoat";
+    font-size: 18px;
+    width: 300px;
+    height: 22px;
+}
+
+/* Social Media Icons*/
+.iconbar {
+    vertical-align: text-top;
+    text-align: center;
+    font-size: 28px;
+}
+.iconbar a {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.fa-facebook-square {
+    color: #3B5998;
+}
+.fa-instagram {
+    color:#125688;
+}
+.fa-twitter-square {
+    color: #55ACEE;
+}
