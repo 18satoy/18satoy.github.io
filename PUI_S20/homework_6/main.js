@@ -1,10 +1,17 @@
+var buyRolls = ["empty"];
+
 function addOriginalRoll(item) {
     var cart = document.getElementById("cart");
     var newItem = document.createElement("li")
-    if ("empty" in cart.classList) {
-        cart.className = "cart";
+    if (buyRolls[0] == "empty") {
+        buyRolls[0] = item;
     }
-    cart.appendChild(item);
+    else {
+        buyRolls.push(item);
+    }
+    for (i = 0; i < buyRolls.length; i++){
+        
+    }
 }
 
 function deleteRoll(item) {
