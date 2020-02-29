@@ -12,7 +12,7 @@ header a {
 
 /* navigation bar */
 
-ul {
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -159,9 +159,10 @@ main {
     font-size: 14px;
     font-family: "Walter Turncoat", cursive;
     margin: 0 5% 2% 3%;
-}
-.quantity button:hover, .quantity button:focus {
     outline: none;
+    transition-duration: 0.2s;
+}
+#one, #none {
     background-color: #fce5cdff;
 }
 
@@ -173,10 +174,8 @@ main {
     font-size: 14px;
     font-family: "Walter Turncoat", cursive;
     margin: 0 5% 2% 2%;
-}
-.flavor button:hover, .flavor button:focus {
     outline: none;
-    background-color: #fce5cdff;
+    transition-duration: 0.2s;
 }
 
 /* Add to Cart*/
@@ -213,6 +212,7 @@ main {
     border: 1px solid #595959;
     background-color: #fce5cdff;
     transition-duration: 0.2s;
+    outline: none;
 }
 
 .empty button:hover {

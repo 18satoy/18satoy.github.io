@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="main.js" type="text/javascript"> </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bun Bun Bake Shop</title>
     <link rel="stylesheet" href="style.css">
@@ -19,7 +20,7 @@
     </header>
     <!-- Navigation Bar -->
     <nav>
-        <ul>
+        <ul class="navBar">
             <li><a href="home.html">Home</a></li>
             <li><a href="products.html">Order Online</a></li>
             <li><a>About Us</a></li>
@@ -36,10 +37,11 @@
     <div class="title">
         <h1>Your Cart</h1>
     </div>
-    <div class="empty">
+    <ul class="cart empty">
         <h3>Your shopping cart is empty right now</h3>
-        <button>Continue Shopping</button>
-    </div>
+        <button onclick="window.location.href= 'products.html';">
+            Continue Shopping</button>
+    </ul>
     
 </body>
 

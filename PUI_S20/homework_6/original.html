@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="main.js" type="text/javascript"> </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bun Bun Bake Shop</title>
     <link rel="stylesheet" href="style.css">
@@ -38,7 +39,7 @@
     <!-- have image and description side by side -->
     <main class="prodSplit">
         <div class="prodPic">
-            <img src="icons/original_m.jpg" alt="Original">
+            <img id="picture" src="icons/original_m.jpg" alt="Original">
         </div>
         <div class="prodDescription">
             <h1>Original Cinnamon Roll</h1>
@@ -50,10 +51,14 @@
                     <h4>Quantity:</h4>
                     
                     <div class="number">
-                        <button>1</button>
-                        <button>3</button>
-                        <button>6</button>
-                        <button>12</button>
+                        <button id="one" onclick=pickQuantity(this)>
+                            1</button>
+                        <button id="three" onclick=pickQuantity(this)>
+                            3</button>
+                        <button id="six" onclick=pickQuantity(this)>
+                            6</button>
+                        <button id="twelve" onclick=pickQuantity(this)>
+                            12</button>
                     </div>
                     
                 </div>
@@ -62,17 +67,23 @@
                     <h4>Glaze:</h4>
                     
                     <div class="flavor">
-                        <button>None</button>
-                        <button>Sugar-Milk</button>
-                        <button>Vanilla-Milk</button>
-                        <button>Double-Chocolate</button>
+                        <button id="none" onclick=pickGlaze(this)>
+                            None</button>
+                        <button id="sugar" onclick=pickGlaze(this)>
+                            Sugar-Milk</button>
+                        <button id="vanilla" onclick=pickGlaze(this)>
+                            Vanilla-Milk</button>
+                        <button id="chocolate" onclick=pickGlaze(this)>
+                            Double-Chocolate</button>
                     </div>
                     
                 </div>
                 
             </div>
             <!-- Add to Cart -->
-            <button class="addToCart">Add to Cart</button>
+            <button class="addToCart" onclick="addOriginalRoll(this.parentNode)">
+                Add to Cart
+            </button>
         </div>
     </main>
 </body>
