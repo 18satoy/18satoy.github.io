@@ -197,14 +197,14 @@ main {
 }
 
 /* Shopping Cart */
-.empty {
+#empty {
     font-family: "Walter Turncoat", cursive;
     color: #b7b7b7;
     font-size: 20px;
     text-align: center;
     margin-top: 10%;
 }
-.empty button {
+#empty button {
     font-family: "Walter Turncoat", cursive;
     font-size: 20px;
     border-radius: 10px;

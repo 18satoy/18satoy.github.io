@@ -1,21 +1,25 @@
 var buyRolls = ["empty"];
 
-function addOriginalRoll(item) {
+function Original(number, flavor) {
+    this.num = number;
+    this.glaze = flavor;
+}
+var originalRoll = new Original(1, "none");
+
+function updateCart() {
+    
+}
+
+function addOriginalRoll() {
     var cart = document.getElementById("cart");
-    var newItem = document.createElement("li")
-    if (buyRolls[0] == "empty") {
-        buyRolls[0] = item;
+    if (buyRolls[0] === "empty") {
+        delete buyRolls[0];
     }
-    else {
-        buyRolls.push(item);
-    }
-    for (i = 0; i < buyRolls.length; i++){
-        
-    }
+    buyRolls.push(originalRoll);
 }
 
 function deleteRoll(item) {
-    item.parentNode.removeChild(item);
+    
 }
 
 function pickQuantity(item) {
@@ -28,24 +32,28 @@ function pickQuantity(item) {
         three.style.backgroundColor = "white";
         six.style.backgroundColor = "white";
         twelve.style.backgroundColor = "white";
+        originalRoll.num = 1;
     }
     else if (item.id == "three") {
         one.style.backgroundColor = "white";
         three.style.backgroundColor = "#fce5cdff";
         six.style.backgroundColor = "white";
         twelve.style.backgroundColor = "white";
+        originalRoll.num = 3;
     }
     else if (item.id == "six") {
         one.style.backgroundColor = "white";
         three.style.backgroundColor = "white";
         six.style.backgroundColor = "#fce5cdff";
         twelve.style.backgroundColor = "white";
+        originalRoll.num = 6;
     }
     else {
         one.style.backgroundColor = "white";
         three.style.backgroundColor = "white";
         six.style.backgroundColor = "white";
-        twelve.style.backgroundColor = "#fce5cdff";     
+        twelve.style.backgroundColor = "#fce5cdff";  
+        originalRoll.num = 12;
     }
 }
 
@@ -59,23 +67,27 @@ function pickGlaze(item) {
         sugar.style.backgroundColor = "white";
         vanilla.style.backgroundColor = "white";
         chocolate.style.backgroundColor = "white";
+        originalRoll.glaze = "none";
     }
     else if (item.id == "sugar") {
         none.style.backgroundColor = "white";
         sugar.style.backgroundColor = "#fce5cdff";
         vanilla.style.backgroundColor = "white";
         chocolate.style.backgroundColor = "white";
+        originalRoll.glaze = "sugar";
     }
     else if (item.id == "vanilla") {
         none.style.backgroundColor = "white";
         sugar.style.backgroundColor = "white";
         vanilla.style.backgroundColor = "#fce5cdff";
         chocolate.style.backgroundColor = "white";
+        originalRoll.glaze = "vanilla";
     }
     else {
         none.style.backgroundColor = "white";
         sugar.style.backgroundColor = "white";
         vanilla.style.backgroundColor = "white";
         chocolate.style.backgroundColor = "#fce5cdff";
+        originalRoll.glaze = "chocolate";
     }
 }
