@@ -197,6 +197,14 @@ main {
 }
 
 /* Shopping Cart */
+.cart {
+    list-style-type: none;
+}
+
+.cartRoll {
+    font-family: "Walter Turncoat", cursive;
+    padding-right: 50%;
+}
 #empty {
     font-family: "Walter Turncoat", cursive;
     color: #b7b7b7;
@@ -215,8 +223,9 @@ main {
     outline: none;
 }
 
-.empty button:hover {
+#empty button:hover {
     background-color: #f6b26bff;
+    color: white;
 }
 
 /* Footer */

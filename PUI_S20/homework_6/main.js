@@ -1,25 +1,47 @@
-var buyRolls = ["empty"];
-
 function Original(number, flavor) {
     this.num = number;
     this.glaze = flavor;
 }
 var originalRoll = new Original(1, "none");
 
-function updateCart() {
-    
+Original.prototype.toString = function rollToString() {
+    return '' + this.num + ',' + this.glaze;
 }
 
 function addOriginalRoll() {
-    var cart = document.getElementById("cart");
-    if (buyRolls[0] === "empty") {
-        delete buyRolls[0];
+    var info = originalRoll.toString();
+    if (sessionStorage.rolls) {
+        sessionStorage.rolls = Number(sessionStorage.rolls) + 1;
+        sessionStorage.cart = sessionStorage.cart.concat(',',info);
     }
-    buyRolls.push(originalRoll);
+    else {
+        sessionStorage.rolls = 1;
+        sessionStorage.cart = info;
+    }
 }
 
-function deleteRoll(item) {
-    
+function updateCart() {
+    var total = Number(sessionStorage.rolls);
+    var rolls = sessionStorage.cart.split(',');
+    var i, num, glaze;
+    var cart = document.getElementById("cart");
+    if (total > 0) {
+        cart.removeChild(document.getElementById("empty"));
+        for (i = 0; i < (2*total); i += 2) {
+            var newRoll = document.createElement("li");
+            num = rolls[i];
+            glaze = rolls[i+1];
+            var textZero = "Original Roll "
+            var textOne = "Quantity: " + num;
+            var textTwo = " Glaze: " + glaze;
+            newRoll.appendChild(document.createTextNode(textZero));
+            newRoll.appendChild(document.createTextNode(textOne));
+            newRoll.appendChild(document.createTextNode(textTwo));
+            newRoll.className = "cartRoll";
+            cart.appendChild(newRoll);
+            cart.appendChild(document.createElement('br'));
+        }
+    }
 }
 
 function pickQuantity(item) {

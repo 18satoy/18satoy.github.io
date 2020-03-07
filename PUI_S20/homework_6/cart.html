@@ -11,7 +11,7 @@
     <!-- icons -->
     <script src="https://kit.fontawesome.com/b976b3fbf4.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload="updateCart()">
     <!-- Top Logo -->
     <header>
         <a href="home.html">
@@ -37,13 +37,13 @@
     <div class="title">
         <h1>Your Cart</h1>
     </div>
-    <div class="cart">
-        <div id="empty">
+    <ul class="cart" id="cart">
+        <li id="empty">
         <h3>Your shopping cart is empty right now</h3>
         <button onclick="window.location.href= 'products.html';">
             Continue Shopping</button>
-        </div>
-    </div>
+        </li>
+    </ul>
     
 </body>
 
