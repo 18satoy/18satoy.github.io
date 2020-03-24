@@ -47,6 +47,10 @@ function updateCart() {
             var textZero = "Original Roll "
             var textOne = "Quantity: " + num;
             var textTwo = " Glaze: " + glaze;
+            var pic = document.createElement("IMG");
+            pic.setAttribute("src", "icons/original_s.jpg");
+            pic.setAttribute("alt", "Original Roll");
+            newRoll.appendChild(pic);
             newRoll.appendChild(document.createTextNode(textZero));
             newRoll.appendChild(document.createTextNode(textOne));
             newRoll.appendChild(document.createTextNode(textTwo));

@@ -201,6 +201,12 @@ main {
     list-style-type: none;
 }
 
+.cart img {
+    width: 30%;
+    margin-left: 10%;
+    margin-right: 5%;
+}
+
 .cartRoll {
     font-family: "Walter Turncoat", cursive;
     padding-right: 50%;
