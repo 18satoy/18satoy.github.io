@@ -28,6 +28,10 @@ function addOriginalRoll() {
 }
 
 function createProdInfo(newRoll, num, glaze) {
+    //create div for product info
+    var prod = document.createElement("DIV");
+    prod.className = "prodInfo";
+    
     //calculate price
     var price = parseInt(num);
     price *= 3.85;
@@ -52,14 +56,27 @@ function createProdInfo(newRoll, num, glaze) {
     pic.setAttribute("src", "icons/original_s.jpg");
     pic.setAttribute("alt", "Original Roll");
     
-    //append to actual div
-    newRoll.appendChild(pic);
-    newRoll.appendChild(prodName);
-    newRoll.appendChild(quant);
-    newRoll.appendChild(document.createElement("BR"));
-    newRoll.appendChild(glaze);
-    newRoll.appendChild(document.createElement("BR"));
-    newRoll.appendChild(cost);
+    //add remove function
+    var remove = document.createElement("DIV");
+    var textRemove = "Remove";
+    var rem = document.createElement("BUTTON");
+    rem.appendChild(document.createTextNode(textRemove));
+    remove.appendChild(rem);
+    remove.className = "delete";
+    
+    //append to prodInfo
+    prod.appendChild(pic);
+    prod.appendChild(prodName);
+    prod.appendChild(quant);
+    prod.appendChild(document.createElement("BR"));
+    prod.appendChild(glaze);
+    prod.appendChild(document.createElement("BR"));
+    prod.appendChild(cost);
+    
+    
+    //append to cart div
+    newRoll.appendChild(prod);
+    newRoll.appendChild(remove);
     newRoll.className = "cartRoll";
 }
 

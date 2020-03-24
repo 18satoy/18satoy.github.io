@@ -200,7 +200,6 @@ main {
 .cart {
     width: 65%;
     float: left;
-    border: 1px aliceblue solid;
     padding: 1% 0 0 10%;
 }
 .cartRoll {
@@ -208,6 +207,7 @@ main {
     margin: 0;
     height: 150px;
 }
+
 .cartRoll img {
     min-width: 180px;
     width: 20%;
@@ -229,6 +229,38 @@ main {
 .price {
     margin: 0;
     padding-top: 1.5%;
+}
+
+.prodInfo {
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 80%;
+    height: 100%;
+}
+
+.delete {
+    width: 20%;
+    height: 100%;
+    float: right;
+}
+.delete button{
+    font-family: "Walter Turncoat", cursive;
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+    top: 25%;
+    left: 25%;
+    padding: 10px 10px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px darkorange solid;
+}
+
+.delete button:hover {
+    background-color: #f6b26bff;
+    color: white;
+    transition-duration: 0.2s;
 }
 
 /* empty cart */
@@ -253,15 +285,18 @@ main {
 #empty button:hover {
     background-color: #f6b26bff;
     color: white;
+    transition-duration: 0.2s;
 }
 
 /* Order Summary */
 .orderSummary {
     font-family: "Walter Turncoat";
-    width: 24%;
+    width: 22%;
     float: right;
     text-align: center;;
     border: 1px red solid;
+    border-radius: 25px;
+    margin-right: 2.5%;
 }
 
 /* Footer */
