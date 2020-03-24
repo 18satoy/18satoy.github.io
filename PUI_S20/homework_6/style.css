@@ -198,29 +198,40 @@ main {
 
 /* Shopping Cart */
 .cart {
-    list-style-type: none;
+    width: 65%;
+    float: left;
+    border: 1px aliceblue solid;
+    padding: 1% 0 0 10%;
 }
-
 .cartRoll {
     font-family: "Walter Turncoat", cursive;
     margin: 0;
-    margin-bottom: 6%;
+    height: 150px;
 }
 .cartRoll img {
-    width: 15%;
-    margin-left: 5%;
-    margin-right: 5%;
-    padding: 1%;
+    min-width: 180px;
+    width: 20%;
+    padding-right: 3%;
     float: left;
-    display: flex;
-    align-items: center;
+    vertical-align: middle;
 }
 
 .cartRoll h2 {
-    padding-top: 1%;
+    padding: none;
+    margin-top: 0;
     margin-bottom: 0;
 }
 
+.cartRoll a {
+    color: #666666;
+}
+
+.price {
+    margin: 0;
+    padding-top: 1.5%;
+}
+
+/* empty cart */
 #empty {
     font-family: "Walter Turncoat", cursive;
     color: #b7b7b7;
@@ -242,6 +253,15 @@ main {
 #empty button:hover {
     background-color: #f6b26bff;
     color: white;
+}
+
+/* Order Summary */
+.orderSummary {
+    font-family: "Walter Turncoat";
+    width: 24%;
+    float: right;
+    text-align: center;;
+    border: 1px red solid;
 }
 
 /* Footer */

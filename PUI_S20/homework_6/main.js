@@ -28,23 +28,62 @@ function addOriginalRoll() {
 }
 
 function createProdInfo(newRoll, num, glaze) {
+    //calculate price
+    var price = parseInt(num);
+    price *= 3.85;
+    
+    //add name, quantity, glaze info
     var textZero = "Original Roll";
     var textOne = "Quantity: " + num;
     var textTwo = " Glaze: " + glaze;
+    var textThree = "Price: $" + price.toFixed(2);
     var prodName = document.createElement("H2");
     var quant = document.createElement("A");
     var glaze = document.createElement("A");
+    var cost = document.createElement("H3");
     prodName.appendChild(document.createTextNode(textZero));
     quant.appendChild(document.createTextNode(textOne));
     glaze.appendChild(document.createTextNode(textTwo));
+    cost.appendChild(document.createTextNode(textThree));
+    cost.className = "price";
+    
+    //add picture
     var pic = document.createElement("IMG");
     pic.setAttribute("src", "icons/original_s.jpg");
     pic.setAttribute("alt", "Original Roll");
+    
+    //append to actual div
     newRoll.appendChild(pic);
     newRoll.appendChild(prodName);
     newRoll.appendChild(quant);
+    newRoll.appendChild(document.createElement("BR"));
     newRoll.appendChild(glaze);
+    newRoll.appendChild(document.createElement("BR"));
+    newRoll.appendChild(cost);
     newRoll.className = "cartRoll";
+}
+
+function createOrderSummary (subtotal, summary) {
+    var headingT = "Order Summary";
+    var itemsT = "Items: $" + subtotal.toFixed(2);
+    var shipHandleT = "Fees: $4.50"
+    var subtotalT = "Subtotal: $" + (subtotal + 4.50).toFixed(2);
+        
+    var heading = document.createElement("H2");
+    var items = document.createElement("H3");
+    var shipHandle = document.createElement("H3");
+    var total = document.createElement("H2");
+    
+    heading.appendChild(document.createTextNode(headingT));
+    items.appendChild(document.createTextNode(itemsT));
+    shipHandle.appendChild(document.createTextNode(shipHandleT));
+    total.appendChild(document.createTextNode(subtotalT));
+    
+    summary.appendChild(heading);
+    summary.appendChild(items);
+    summary.appendChild(shipHandle);
+    summary.appendChild(total);
+
 }
 
 //update the shopping cart page by using session storage data
@@ -58,15 +97,29 @@ function updateCart() {
         var cart = document.getElementById("cart");
         //since products added, remove the empty message
         cart.removeChild(document.getElementById("empty"));
+        //keep track of subtotal
+        var subtotal = 0;
         //get each order: number and glaze
         for (i = 0; i < (2*total); i += 2) {
             var newRoll = document.createElement("DIV");
             num = rolls[i];
             glaze = rolls[i+1];
+            
+            //calculate subtotal
+            subtotal += (parseInt(num) * 3.85);
+            
             //add this info to the div
-            createProdInfo(newRoll, num, glaze);
+            createProdInfo(newRoll, num, glaze, subtotal);
+            
             cart.appendChild(newRoll);
         }
+        //create order summary box
+        var summary = document.createElement("DIV");
+        summary.className = "orderSummary";
+        createOrderSummary(subtotal, summary);
+        document.body.appendChild(summary);
+        
+        
     }
 }
 
