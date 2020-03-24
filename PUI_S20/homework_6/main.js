@@ -27,6 +27,26 @@ function addOriginalRoll() {
     }
 }
 
+function createProdInfo(newRoll, num, glaze) {
+    var textZero = "Original Roll";
+    var textOne = "Quantity: " + num;
+    var textTwo = " Glaze: " + glaze;
+    var prodName = document.createElement("H2");
+    var quant = document.createElement("A");
+    var glaze = document.createElement("A");
+    prodName.appendChild(document.createTextNode(textZero));
+    quant.appendChild(document.createTextNode(textOne));
+    glaze.appendChild(document.createTextNode(textTwo));
+    var pic = document.createElement("IMG");
+    pic.setAttribute("src", "icons/original_s.jpg");
+    pic.setAttribute("alt", "Original Roll");
+    newRoll.appendChild(pic);
+    newRoll.appendChild(prodName);
+    newRoll.appendChild(quant);
+    newRoll.appendChild(glaze);
+    newRoll.className = "cartRoll";
+}
+
 //update the shopping cart page by using session storage data
 function updateCart() {
     //check if user has added any products to the cart first
@@ -40,23 +60,12 @@ function updateCart() {
         cart.removeChild(document.getElementById("empty"));
         //get each order: number and glaze
         for (i = 0; i < (2*total); i += 2) {
-            var newRoll = document.createElement("li");
+            var newRoll = document.createElement("DIV");
             num = rolls[i];
             glaze = rolls[i+1];
-            //add this info as a li
-            var textZero = "Original Roll "
-            var textOne = "Quantity: " + num;
-            var textTwo = " Glaze: " + glaze;
-            var pic = document.createElement("IMG");
-            pic.setAttribute("src", "icons/original_s.jpg");
-            pic.setAttribute("alt", "Original Roll");
-            newRoll.appendChild(pic);
-            newRoll.appendChild(document.createTextNode(textZero));
-            newRoll.appendChild(document.createTextNode(textOne));
-            newRoll.appendChild(document.createTextNode(textTwo));
-            newRoll.className = "cartRoll";
+            //add this info to the div
+            createProdInfo(newRoll, num, glaze);
             cart.appendChild(newRoll);
-            cart.appendChild(document.createElement('br'));
         }
     }
 }
