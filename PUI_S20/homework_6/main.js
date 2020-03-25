@@ -28,11 +28,13 @@ function addOriginalRoll() {
 }
 
 function removeFromCart(item) {
+    //get data needed and initialize variables
     var cart = item.parentNode.parentNode.parentNode;
     var roll = item.parentNode.parentNode;
     var quant = roll.firstChild.childNodes[2].textContent;
     var glaze = roll.firstChild.childNodes[4].textContent;
     
+    //the quantity and glaze data
     var num = quant.slice(10);
     var flavor = glaze.slice(8);
     
@@ -43,7 +45,7 @@ function removeFromCart(item) {
     var i;
     var total = Number(sessionStorage.rolls);
     var rolls = sessionStorage.cart.split(',');
-    console.log(rolls);
+    //find and delete the removed product info from storage
     for (i = 0; i < (2*total); i += 2) {
         if ((rolls[i] == num) && (rolls[i+1] == flavor)) 
         {
@@ -56,13 +58,39 @@ function removeFromCart(item) {
         //if empty cart
         if (total === 0) {
             sessionStorage.rolls = total;
-            sessionStorage.cart = "";
-            cart.removeChild(document.getElementById("orderSum"));
+            sessionStorage.cart = rolls;
+            document.body.removeChild(document.getElementById("orderSum"));
+            
+            //change to empty cart page
+            var empty = document.createElement("DIV");
+            empty.id = "empty";
+            var message = document.createElement("H3");
+            var text = "Your shopping cart is empty right now";
+            message.appendChild(document.createTextNode(text));
+            var but = document.createElement("BUTTON");
+            var butText = "Continue Shopping";
+            but.appendChild(document.createTextNode(butText));
+            but.onclick = function() {window.location.href='products.html';}
+            
+            empty.appendChild(message);
+            empty.appendChild(but);
+            cart.appendChild(empty);
             
         }
         else {
             sessionStorage.rolls = total;
             sessionStorage.cart = rolls;
+            
+            //update order summary
+            var itemT = document.getElementById("itemCost");
+            var subT = document.getElementById("subtotalCost");
+            var itemC = Number(itemT.textContent.slice(8));
+            var subC = Number(subT.textContent.slice(11));
+            var minus = Number(num) * 3.85;
+            itemC -= minus;
+            subC -= minus;
+            itemT.textContent = "Items: $" + itemC.toFixed(2);
+            subT.textContent = "Subtotal: $" + subC.toFixed(2);
         }
     }
 }
@@ -121,12 +149,15 @@ function createProdInfo(newRoll, num, glaze) {
     newRoll.className = "cartRoll";
 }
 
+//creates the order summary box on the right of the cart page
 function createOrderSummary (subtotal, summary) {
+    //initialize variables
     var headingT = "Order Summary";
     var itemsT = "Items: $" + subtotal.toFixed(2);
     var shipHandleT = "Fees: $4.50"
     var subtotalT = "Subtotal: $" + (subtotal + 4.50).toFixed(2);
-        
+      
+    //create the HTML elements
     var heading = document.createElement("H2");
     var items = document.createElement("H3");
     var shipHandle = document.createElement("H3");
@@ -137,6 +168,11 @@ function createOrderSummary (subtotal, summary) {
     shipHandle.appendChild(document.createTextNode(shipHandleT));
     total.appendChild(document.createTextNode(subtotalT));
     
+    //will be used to recalculate cost when removing products
+    items.id = "itemCost";
+    total.id = "subtotalCost";
+    
+    //add to the summary div
     summary.appendChild(heading);
     summary.appendChild(items);
     summary.appendChild(shipHandle);
@@ -147,10 +183,13 @@ function createOrderSummary (subtotal, summary) {
 //update the shopping cart page by using session storage data
 function updateCart() {
     //check if user has added any products to the cart first
-    if (sessionStorage.rolls) {
+    if (sessionStorage.rolls && sessionStorage.rolls !== "0") {
         var total = Number(sessionStorage.rolls);
         //get the info as a string array
         var rolls = sessionStorage.cart.split(',');
+        if (rolls[0] == "") {
+            rolls.splice(0,1);
+        }
         var i, num, glaze;
         var cart = document.getElementById("cart");
         //since products added, remove the empty message
