@@ -27,6 +27,46 @@ function addOriginalRoll() {
     }
 }
 
+function removeFromCart(item) {
+    var cart = item.parentNode.parentNode.parentNode;
+    var roll = item.parentNode.parentNode;
+    var quant = roll.firstChild.childNodes[2].textContent;
+    var glaze = roll.firstChild.childNodes[4].textContent;
+    
+    var num = quant.slice(10);
+    var flavor = glaze.slice(8);
+    
+    //remove visually
+    cart.removeChild(roll);
+    
+    //update session storage
+    var i;
+    var total = Number(sessionStorage.rolls);
+    var rolls = sessionStorage.cart.split(',');
+    console.log(rolls);
+    for (i = 0; i < (2*total); i += 2) {
+        if ((rolls[i] == num) && (rolls[i+1] == flavor)) 
+        {
+            rolls.splice(i, 2);
+        }
+    }
+    total -= 1;
+    //update order summary
+    if (sessionStorage.rolls) {
+        //if empty cart
+        if (total === 0) {
+            sessionStorage.rolls = total;
+            sessionStorage.cart = "";
+            cart.removeChild(document.getElementById("orderSum"));
+            
+        }
+        else {
+            sessionStorage.rolls = total;
+            sessionStorage.cart = rolls;
+        }
+    }
+}
+
 function createProdInfo(newRoll, num, glaze) {
     //create div for product info
     var prod = document.createElement("DIV");
@@ -61,6 +101,7 @@ function createProdInfo(newRoll, num, glaze) {
     var textRemove = "Remove";
     var rem = document.createElement("BUTTON");
     rem.appendChild(document.createTextNode(textRemove));
+    rem.onclick = function() {removeFromCart(this)};
     remove.appendChild(rem);
     remove.className = "delete";
     
@@ -133,6 +174,7 @@ function updateCart() {
         //create order summary box
         var summary = document.createElement("DIV");
         summary.className = "orderSummary";
+        summary.id = "orderSum";
         createOrderSummary(subtotal, summary);
         document.body.appendChild(summary);
         

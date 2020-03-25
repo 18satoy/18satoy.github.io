@@ -294,7 +294,7 @@ main {
     width: 22%;
     float: right;
     text-align: center;;
-    border: 1px red solid;
+    border: 3px rgba(249, 105, 14, 1) solid;
     border-radius: 25px;
     margin-right: 2.5%;
 }
