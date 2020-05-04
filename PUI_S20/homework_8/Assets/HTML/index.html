@@ -13,6 +13,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <!-- AOS -->
+    <link rel="stylesheet" href="../aos/dist/aos.css" />
+    <script src="../aos/dist/aos.js"></script>
+    
+    <!-- anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <!-- My Stylesheets -->
     <link rel="stylesheet" href="../CSS/style.css">
     <!-- My JS files -->
@@ -45,8 +52,18 @@
     <div id="home" class="container-fluid text-center">
         <!-- Name and Major-->
         <div class="centerIt">
-            <h1> Yumi Sato </h1>
-            <h3> Computer Science + Human-Computer Interaction at CMU</h3>
+             <!-- <h1> Yumi Sato </h1>
+            <h3> Computer Science + Human-Computer Interaction at CMU</h3> -->
+            <div class="animated-title">
+                <div class="text-top">
+                    <div>
+                        <span>Yumi Sato</span>
+                    </div>
+                </div>
+                <div class="text-bottom">
+                    <div>Computer Science + Human-Computer Interaction at CMU</div>
+                </div>
+            </div>
             <!-- put arrow button here -->
             <a class="btn" href="#aboutMe" id="scrollDown">
                 <i class="fas fa-chevron-circle-down" id="scrollDownIcon"></i>
@@ -57,7 +74,7 @@
     <div id="aboutMe" class="container-fluid text-center">
         <!-- Section Header -->
         <div id="aboutHeader">
-            <h1>About Me</h1>
+            <h1>Hello!</h1>
         </div>
         <br>
         <!-- Content -->
@@ -81,61 +98,63 @@
         </div>
         <!-- Projects Gallery -->
         <div class="row text-center">
-            <div class="col-sm-4">
+            <div class="col-sm-4 project" id="project1" data-aos="zoom-in">
                 <div class="thumbnail">
                     <img src="../Images/penchan.png" alt="placeholder project image">
                     <p><strong>Project 1</strong></p>
                     <p> Project Description</p>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 project" data-aos="zoom-in" data-aos-delay="300">
                 <div class="thumbnail">
                     <img src="../Images/penchan.png" alt="placeholder project image">
                     <p><strong>Project 2</strong></p>
                     <p> Project Description</p>
                 </div>
-            </div><div class="col-sm-4">
+            </div>
+            <div class="col-sm-4 project" data-aos="zoom-in" data-aos-delay="600">
                 <div class="thumbnail">
                     <img src="../Images/penchan.png" alt="placeholder project image">
                     <p><strong>Project 3</strong></p>
                     <p> Project Description</p>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 project" data-aos="zoom-in">
                 <div class="thumbnail">
                     <img src="../Images/penchan.png" alt="placeholder project image">
                     <p><strong>Project 4</strong></p>
                     <p> Project Description</p>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 project" data-aos="zoom-in" data-aos-delay="300">
                 <div class="thumbnail">
                     <img src="../Images/penchan.png" alt="placeholder project image">
                     <p><strong>Project 5</strong></p>
                     <p> Project Description</p>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 project" data-aos="zoom-in" data-aos-delay="600">
                 <div class="thumbnail">
                     <img src="../Images/penchan.png" alt="placeholder project image">
                     <p><strong>Project 6</strong></p>
                     <p> Project Description</p>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 project" data-aos="zoom-in">
                 <div class="thumbnail">
                     <img src="../Images/penchan.png" alt="placeholder project image">
                     <p><strong>Project 7</strong></p>
                     <p> Project Description</p>
                 </div>
-            </div><div class="col-sm-4">
+            </div>
+            <div class="col-sm-4 project" data-aos="zoom-in" data-aos-delay="300">
                 <div class="thumbnail">
                     <img src="../Images/penchan.png" alt="placeholder project image">
                     <p><strong>Project 8</strong></p>
                     <p> Project Description</p>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 project" data-aos="zoom-in" data-aos-delay="600">
                 <div class="thumbnail">
                     <img src="../Images/penchan.png" alt="placeholder project image">
                     <p><strong>Project 9</strong></p>
@@ -150,5 +169,7 @@
         <button type="button" class="btn btn-circle"><i class="fab fa-linkedin-in"></i></button>
     </div>
     
-    
+    <script>
+        AOS.init();
+    </script>
 </body>
