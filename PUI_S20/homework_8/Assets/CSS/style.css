@@ -3,7 +3,7 @@
     padding-top: 70px;
     padding-bottom: 70px;
     min-height: 100vh;
-    background-color: aliceblue;
+    background: linear-gradient(#ace0f9, #e7f0fd);
 }
 .centerIt {
     padding-top: 30vh;
@@ -78,131 +78,214 @@
 
 #scrollDown {
     position: relative;
-    top: 30em;
+    top: 50vh;
     background-color: transparent;
-    color: black;
+    color: whitesmoke;
 }
 #scrollDownIcon {
     font-size: 5vh;
 }
+
+/* hang from hover.css*/
+
+@-webkit-keyframes hvr-hang {
+  0% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+  50% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+  100% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+}
+@keyframes hvr-hang {
+  0% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+  50% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+  100% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+}
+@-webkit-keyframes hvr-hang-sink {
+  100% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+}
+@keyframes hvr-hang-sink {
+  100% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+}
+.hvr-hang {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-hang:hover, .hvr-hang:focus, .hvr-hang:active {
+  -webkit-animation-name: hvr-hang-sink, hvr-hang;
+  animation-name: hvr-hang-sink, hvr-hang;
+  -webkit-animation-duration: .3s, 1.5s;
+  animation-duration: .3s, 1.5s;
+  -webkit-animation-delay: 0s, .3s;
+  animation-delay: 0s, .3s;
+  -webkit-animation-timing-function: ease-out, ease-in-out;
+  animation-timing-function: ease-out, ease-in-out;
+  -webkit-animation-iteration-count: 1, infinite;
+  animation-iteration-count: 1, infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-direction: normal, alternate;
+  animation-direction: normal, alternate;
+}
+
+/* end */
+
 #aboutMe {
     padding-top: 10vh;
-    min-height: 100vh;
-    background-color: lavenderblush;
+    min-height: 80vh;
+    background-color: #e7f0fd;
 }
 
 #aboutHeader {
     padding-bottom: 3%;
 }
-
 #propic {
-    margin-left: 12vh;
-    margin-right: 2vh;
+    display: block;
+    margin: auto;
 }
 #selfIntro {
     padding-top: 5vh;
     padding-right: 5vh;
     padding-bottom: 3vh;
+    font-size: max(16px, 2vh);
 }
 
 #myProjects {
     min-height: 100vh;
     padding-top: 10vh;
-    background-color: palevioletred;
+    background: linear-gradient(#e7f0fd, #ace0f9);
 }
 
 .projectHeader {
-    margin-bottom: 5vh;
+    margin-bottom: 10vh;
 }
 
-/* project gallery styles
- * taken from https://hasinhayder.github.io/ImageCaptionHoverAnimation/index4.html
- *
+/* project gallery animations
+ * taken and tweaked from https://bootstrapious.com/p/bootstrap-image-hover
  */
 
-.caption-style-4{
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px;
-
+.hover {
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 60%;
 }
 
-.caption-style-4 li{
-    float: left;
-    padding: 0px;
-    position: relative;
-    overflow: hidden;
+.hover-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  transition: all 0.4s;
 }
 
-.caption-style-4 li:hover .caption{
-    opacity: 1;
+.hover img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.3s;
 }
 
-.caption-style-4 li:hover img{
-    opacity: 1;
-    transform: scale(1.15,1.15);
-    -webkit-transform:scale(1.15,1.15);
-    -moz-transform:scale(1.15,1.15);
-    -ms-transform:scale(1.15,1.15);
-    -o-transform:scale(1.15,1.15);
+.hover-content {
+  position: relative;
+  z-index: 99;
 }
 
-
-.caption-style-4 img{
-    margin: 0px;
-    padding: 0px;
-    float: left;
-    z-index: 4;
+.hover-3::after {
+  content: '';
+  width: calc(100% - 3rem);
+  height: calc(100% - 3rem);
+  border: 1px solid #fff;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 90;
+  transition: all 0.3s;
+  transform: scale(1.1);
+  opacity: 0;
+  display: block;
+  opacity: 0;
 }
 
-
-.caption-style-4 .caption{
-    cursor: pointer;
-    position: absolute;
-    opacity: 0;
-    -webkit-transition:all 0.45s ease-in-out;
-    -moz-transition:all 0.45s ease-in-out;
-    -o-transition:all 0.45s ease-in-out;
-    -ms-transition:all 0.45s ease-in-out;
-    transition:all 0.45s ease-in-out;
+.hover-3-content {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  text-align: center;
+  z-index: 99;
 }
 
-.caption-style-4 img{
-    -webkit-transition:all 0.25s ease-in-out;
-    -moz-transition:all 0.25s ease-in-out;
-    -o-transition:all 0.25s ease-in-out;
-    -ms-transition:all 0.25s ease-in-out;
-    transition:all 0.25s ease-in-out;
+.hover-3-title {
 }
-.caption-style-4 .blur{
-    background-color: rgba(0,0,0,0.65);
-    height: 300px;
-    width: 400px;
-    z-index: 5;
-    position: absolute;
+.hover-3-description {
+  opacity: 0;
+  transform: scale(1.3);
+  transition: all 0.3s;
 }
 
-.caption-style-4 .caption-text h1{
-    text-transform: uppercase;
-    font-size: 24px;
+.hover-3 img {
+  width: 110%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.caption-style-4 .caption-text{
-    z-index: 10;
-    color: #fff;
-    position: absolute;
-    width: 400px;
-    height: 300px;
-    text-align: center;
-    top:100px;
+
+.hover-3 .hover-overlay {
+  background: rgba(0, 0, 0, 0);
 }
+
+.hover-3:hover img {
+  width: 100%;
+}
+
+.hover-3:hover::after {
+  opacity: 1;
+  transform: none;
+}
+
+.hover-3:hover .hover-3-description {
+  opacity: 1;
+  transform: none;
+}
+
+.hover-3:hover .hover-overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+
 
 
 /* END */
 
-.thumbnail img {
-}
 #Contact {
-    background-color: palegoldenrod;
+    background: linear-gradient(#ace0f9, #e7f0fd);
     padding-top: 3vh;
     padding-bottom: 3vh;
 }
@@ -213,4 +296,20 @@
 }
 .btn-circle i {
     font-size: 2vh;
+}
+
+/* Glow from hover.css */
+.hvr-glow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+}
+.hvr-glow:hover, .hvr-glow:focus, .hvr-glow:active {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
