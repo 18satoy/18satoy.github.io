@@ -1,1 +1,48 @@
-//style sheet for homepage
+/* style sheet for homepage */
+#home {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    min-height: 100vh;
+    background-color: aliceblue;
+}
+.centerIt {
+    padding-top: 30vh;
+}
+
+#scrollDown {
+    background-color: transparent;
+    color: black;
+}
+#scrollDownIcon {
+    font-size: 5vh;
+}
+#aboutMe {
+    padding-top: 10vh;
+    min-height: 100vh;
+    background-color: lavenderblush;
+}
+
+#aboutHeader {
+    padding-bottom: 5%;
+}
+
+#propic {
+    margin-left: 12vh;
+    margin-right: 2vh;
+}
+#selfIntro {
+    padding-top: 5vh;
+    padding-right: 5vh;
+}
+
+#myProjects {
+    min-height: 100vh;
+    background-color: palevioletred;
+}
+
+.projectHeader {
+    margin-bottom: 5vh;
+}
+
+.thumbnail img {
+}
