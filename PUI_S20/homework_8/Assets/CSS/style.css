@@ -295,7 +295,7 @@ body {
 
 .emailIcon a {
     color: black;
-    text-decoration-color: none;
+    text-decoration-color: transparent;
     text-decoration: none;
 }
 
