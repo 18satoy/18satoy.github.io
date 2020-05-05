@@ -293,6 +293,12 @@ body {
     padding-bottom: 3vh;
 }
 
+.emailIcon a {
+    color: black;
+    text-decoration-color: none;
+    text-decoration: none;
+}
+
 .btn-circle {
     border-radius: 75%;
     margin-left: 2vw;
