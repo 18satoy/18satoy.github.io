@@ -1,4 +1,8 @@
-/* style sheet for homepage */
+/* set font */
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+/* style for homepage */
 #home {
     padding-top: 70px;
     padding-bottom: 70px;
@@ -14,7 +18,6 @@
  * and tweaked a little bit
  */
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:700');
 @keyframes showTopText {
     0% { transform: translate3d(20%, 100%, 0); }
     100% { transform: translate3d(20%, 15%, 0); }
@@ -25,7 +28,6 @@
 }
 .animated-title {
     color: #222;
-    font-family: Roboto, Arial, sans-serif;
     height: 90vmin;
     left: 50%;
     position: absolute;
@@ -74,7 +76,7 @@
     top: 0;
     transform: translate(0, -100%);
 }
-/* END */
+/* END homepage animation*/
 
 #scrollDown {
     position: relative;
@@ -152,7 +154,7 @@
   animation-direction: normal, alternate;
 }
 
-/* end */
+/* end hang */
 
 #aboutMe {
     padding-top: 10vh;
@@ -243,8 +245,6 @@
   z-index: 99;
 }
 
-.hover-3-title {
-}
 .hover-3-description {
   color: white;
   opacity: 0;
@@ -283,7 +283,9 @@
 
 
 
-/* END */
+/* END project gallery animations */
+
+/* Social Media buttons */
 
 #Contact {
     background: linear-gradient(#ace0f9, #e7f0fd);
@@ -298,6 +300,8 @@
 .btn-circle i {
     font-size: 2vh;
 }
+
+/* end social media buttons */
 
 /* Glow from hover.css */
 .hvr-glow {
@@ -315,40 +319,78 @@
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
 
+/* end glow */
+
 /* Project Details Styles */
 .projectWrapper {
-    background-color:aliceblue;
-    min-height: 90vh;
+    min-height: 100vh;
+    padding: 0;
+    overflow: hidden;
 }
 
 .projectInfo {
-    min-height: 100vh;
+    min-height: 90vh;
+    overflow: hidden;
+    padding: 0;
 }
+
 .projectTitle {
-    padding-top: 45vh;
+    width: 100%;
+    position: absolute;
+    top: 40%;
+}
+
+.projectMediaTop {
+    height: 90vh;
+    justify-content: center;
+}
+.projectOverview {
+    min-height: 45vh;
+    padding-top: 5vh;
 }
 
 .projectOverview {
-    background-color: aquamarine;
-    min-height: 70vh;
+    font-size: 2vh;
 }
 
-.collab {
-    margin-top: 5vh;
-}
-.projectDesc {
-    margin-top: 5vh;
-}
-.myRoles {
-    margin-top: 5vh;
+.projectOverview h4 {
+    font-size: 4vh;
+    padding-bottom: 4vh;
 }
 
+.collab, .projectDesc{
+    padding-bottom: 2vh;
+}
+.projectDesc p {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.collab ul {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.myRoles ul {
+    display: inline-block;
+    list-style-position: inside;
+    padding-left: 5%;
+    text-align: left;
+    padding-bottom: 5vh;
+}
 .learning {
-    background-color: lavender;
     min-height: 50vh;
 }
+.learning h4 {
+    font-size: 4vh;
+    padding-bottom: 4vh;
+}
+
 .tools {
     list-style-position: inside;
+    display: inline-block;
+    text-align: left;
+    padding-left: 0;
+    font-size: 2vh;
 }
 .usedTools {
     margin-top: 5vh;
@@ -356,9 +398,44 @@
 .goals {
     margin-top: 5vh;
 }
+.goals ul {
+    list-style-position: inside;
+    text-align: left;
+    font-size: 2vh;
+    padding-right: 1em;
+    padding-bottom: 5vh;
+}
 .designProcess {
     min-height: 100vh;
 }
 .designProcess h3{
     margin-top: 60px;
+    font-size: 4vh;
 }
+
+/* End Generic Project Details Styles */
+
+/* Give Up The Ghost style */
+
+.GUTGbg {
+    background: linear-gradient(#29323c, #868f96);
+}
+
+.GUTGfont {
+    font-family: 'Leander';
+    color: #ADB3B8;
+}
+
+.GUTGfontColor {
+    color: #D8DFE7;
+}
+
+.GUTGinfo {
+    background-color: black;
+}
+
+.GUTGlearning {
+    background-color: #5A6269;
+}
+
+/* End Give Up The Ghost Style */
