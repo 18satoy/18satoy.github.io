@@ -347,9 +347,6 @@ body {
 .projectOverview {
     min-height: 45vh;
     padding-top: 5vh;
-}
-
-.projectOverview {
     font-size: 2vh;
 }
 
@@ -417,24 +414,24 @@ body {
 
 /* Give Up The Ghost style */
 
-.GUTGbg {
+#GUTGbg {
     background: linear-gradient(#29323c, #868f96);
 }
 
-.GUTGfont {
+#GUTGfont {
     font-family: 'Leander';
     color: #ADB3B8;
 }
 
-.GUTGfontColor {
+#GUTGfontColor {
     color: #D8DFE7;
 }
 
-.GUTGinfo {
+#GUTGinfo {
     background-color: black;
 }
 
-.GUTGlearning {
+#GUTGlearning {
     background-color: #5A6269;
 }
 
